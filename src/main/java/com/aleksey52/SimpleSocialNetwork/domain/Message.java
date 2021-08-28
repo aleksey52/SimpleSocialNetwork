@@ -19,11 +19,11 @@ public class Message {
     private long id;
 
     @OneToOne
-    @JoinColumn(name = "userId")
+    @JoinColumn(name = "user_id")
     private User user;
 
     @OneToOne
-    @JoinColumn(name = "addresseeId")
+    @JoinColumn(name = "addressee_id")
     private User addressee;
 
     @Column
