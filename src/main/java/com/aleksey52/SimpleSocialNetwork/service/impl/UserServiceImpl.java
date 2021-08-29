@@ -3,7 +3,9 @@ package com.aleksey52.SimpleSocialNetwork.service.impl;
 import com.aleksey52.SimpleSocialNetwork.domain.User;
 import com.aleksey52.SimpleSocialNetwork.repository.UserRepository;
 import com.aleksey52.SimpleSocialNetwork.service.UserService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 

@@ -4,9 +4,11 @@ import com.aleksey52.SimpleSocialNetwork.domain.Message;
 import com.aleksey52.SimpleSocialNetwork.domain.User;
 import com.aleksey52.SimpleSocialNetwork.repository.MessageRepository;
 import com.aleksey52.SimpleSocialNetwork.service.MessageService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class MessageServiceImpl implements MessageService {
     private MessageRepository messageRepository;
 

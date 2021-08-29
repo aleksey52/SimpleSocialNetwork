@@ -6,7 +6,7 @@ import lombok.Setter;
 
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.sql.Date;
 
 @Getter
 @Setter
@@ -18,11 +18,11 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "addressee_id")
     private User addressee;
 
@@ -30,5 +30,12 @@ public class Message {
     private String body;
 
     @Column
-    private LocalDateTime creationTime;
+    private Date creationTime;
+
+    public Message(User user, User addressee, String body, Date creationTime) {
+        this.user = user;
+        this.addressee = addressee;
+        this.body = body;
+        this.creationTime = creationTime;
+    }
 }

@@ -30,4 +30,12 @@ public class User {
 
     @Column
     private String lastName;
+
+    public User(String userName, String password, String firstName, String middleName, String lastName) {
+        this.userName = userName;
+        this.password = password;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+    }
 }
