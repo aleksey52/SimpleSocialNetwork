@@ -6,6 +6,7 @@ import com.aleksey52.SimpleSocialNetwork.repository.MessageRepository;
 import com.aleksey52.SimpleSocialNetwork.service.MessageService;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -14,6 +15,17 @@ public class MessageServiceImpl implements MessageService {
 
     public MessageServiceImpl(MessageRepository messageRepository) {
         this.messageRepository = messageRepository;
+    }
+
+    @Override
+    public List<Message> findAll() {
+
+        return (List<Message>) messageRepository.findAll();
+    }
+
+    @Override
+    public Message findById(long id) {
+        return messageRepository.findById(id);
     }
 
     @Override

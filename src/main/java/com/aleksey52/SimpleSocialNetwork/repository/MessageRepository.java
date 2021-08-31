@@ -9,6 +9,7 @@ import java.util.List;
 
 @Repository
 public interface MessageRepository extends CrudRepository<Message, Long> {
+    Message findById(long id);
     List<Message> findByUser(User user);
     List<Message> findByAddressee(User addressee);
 }

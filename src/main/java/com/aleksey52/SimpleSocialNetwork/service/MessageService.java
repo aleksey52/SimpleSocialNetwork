@@ -6,6 +6,8 @@ import com.aleksey52.SimpleSocialNetwork.domain.User;
 import java.util.List;
 
 public interface MessageService {
+    List<Message> findAll();
+    Message findById(long id);
     List<Message> findByUser(User user);
     List<Message> findByAddressee(User addressee);
     Message save(Message message);
