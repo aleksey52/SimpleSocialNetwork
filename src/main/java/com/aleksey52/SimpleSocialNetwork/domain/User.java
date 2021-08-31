@@ -11,31 +11,37 @@ import javax.persistence.*;
 @NoArgsConstructor
 
 @Entity
+@Table(name = "usr")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private String id;
 
     @Column
-    private String userName;
-
-    @Column
-    private String password;
+    private String name;
 
     @Column
     private String firstName;
 
     @Column
-    private String middleName;
-
-    @Column
     private String lastName;
 
-    public User(String userName, String password, String firstName, String middleName, String lastName) {
-        this.userName = userName;
-        this.password = password;
+    @Column
+    private String picture;
+
+    @Column
+    private String email;
+
+    @Column
+    private String locale;
+
+
+    public User(String id, String name, String firstName, String lastName, String picture, String email, String locale) {
+        this.id = id;
+        this.name = name;
         this.firstName = firstName;
-        this.middleName = middleName;
         this.lastName = lastName;
+        this.picture = picture;
+        this.email = email;
+        this.locale = locale;
     }
 }

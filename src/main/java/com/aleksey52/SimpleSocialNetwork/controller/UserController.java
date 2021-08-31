@@ -4,7 +4,6 @@ import com.aleksey52.SimpleSocialNetwork.domain.User;
 import com.aleksey52.SimpleSocialNetwork.service.impl.UserServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,14 +22,9 @@ public class UserController {
         return new ResponseEntity<>(userService.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping("/user/{id}")
-    public ResponseEntity<User> findById(@PathVariable("id") long id) {
+    @GetMapping("/{id}")
+    public ResponseEntity<User> findById(@PathVariable("id") String id) {
         return new ResponseEntity<>(userService.findById(id), HttpStatus.OK);
-    }
-
-    @GetMapping("/user_by_username/{username}")
-    public ResponseEntity<User> findByUserName(@PathVariable("username") String userName) {
-        return new ResponseEntity<>(userService.findByUserName(userName), HttpStatus.OK);
     }
 
     @PostMapping("/create")
@@ -39,13 +33,13 @@ public class UserController {
     }
 
     @PutMapping("/update/{id}")
-    public User updateUser(@PathVariable("id") long id, @RequestBody User user) {
+    public User updateUser(@PathVariable("id") String id, @RequestBody User user) {
         userService.findById(id); //need exception
         return userService.save(user);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteById(@PathVariable("id") long id) {
+    public void deleteById(@PathVariable("id") String id) {
         userService.deleteById(id);
     }
 }

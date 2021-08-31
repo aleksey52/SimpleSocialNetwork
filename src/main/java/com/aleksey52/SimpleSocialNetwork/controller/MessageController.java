@@ -5,7 +5,6 @@ import com.aleksey52.SimpleSocialNetwork.domain.User;
 import com.aleksey52.SimpleSocialNetwork.service.impl.MessageServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
